@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Sysvendas</title>
+    <link rel="icon" href="icon.png">
+
+</head>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="logo1.png" alt="" width="130" height="37"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Vendedores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Vendas</a>
+          </li>
+          <li class="nav-item dropdown me-5">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Cadastro
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="Cadastro_de_Clientes.html">Clientes</a></li>
+              <li><a class="dropdown-item" href="Cadastro_de_Produtos.html">Produtos</a></li>
+              <li><a class="dropdown-item" href="Cadastro_de_Vendedores.html">Vendedores</a></li>
+              <li><a class="dropdown-item" href="Venda.html">Vendas</a></li>
+            </ul>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+<body>
+
+
+      <div class="container mt-5 bg-body-tertiary p-3 text-center">
+        <h3 class="mb-3">Cadastro de Vendedores</h3>
+        
+        <form>
+            
+            <div class="row mb-3">
+              <div class="col form-floating">
+                <input type="text" class="form-control" id="floatingInputCPF" placeholder="CPF" required autofocus>
+                <label for="floatingInputCPF" class="ps-3">CPF</label>
+              </div>
+              <div class="col form-floating">
+                <input type="text" class="form-control" id="floatingInputRG" placeholder="RG" required autofocus>
+                <label for="floatingInputRG" class="ps-3">RG</label>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col form-floating">
+                <input type="text" class="form-control" id="floatingInputName" placeholder="Nome" required autofocus>
+                <label for="floatingInputName" class="ps-3">Nome</label>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-sm-10 form-floating">
+                <input type="text" class="form-control" id="floatingInputStreet" placeholder="Logradouro" required autofocus>
+                <label for="floatingInputStreet" class="ps-3">Logradouro</label>
+              </div>
+              <div class="col-sm-2 form-floating">
+                <input type="text" class="form-control" id="floatingInputNumber" placeholder="Numero" required autofocus>
+                <label for="floatingInputNumber" class="ps-3">Numero</label>
+              </div>
+            </div>
+              
+              <div class="row mb-3">
+                <div class="col-sm-8 form-floating">
+                  <input type="text" class="form-control" id="floatingInputNeighborhood" placeholder="Bairro" required autofocus>
+                  <label for="floatingInputNeighborhood" class="ps-3">Bairro</label>
+                </div>
+                <div class="col-sm-4 form-floating">
+                  <input type="text" class="form-control" id="floatingInputPostalCode" placeholder="CEP" required autofocus>
+                  <label for="floatingInputPostalCode" class="ps-3">CEP</label>
+                </div>
+              </div>
+
+            <div class="row mb-3">
+              <div class="col-sm-10 form-floating">
+                <input type="text" class="form-control" id="floatingInputCity" placeholder="Cidade" required autofocus>
+                <label for="floatingInputCity" class="ps-3">Cidade</label>
+              </div>
+              <div class="col-sm-2 form-floating">
+                <input type="text" class="form-control" id="floatingInputState" placeholder="Estado" required autofocus>
+                <label for="floatingInputState" class="ps-3">Estado</label>
+              </div>
+            </div>
+<div class="row mb-3">
+  <div class="col form-floating">
+    <input type="text" class="form-control" id="floatingInputPhone" placeholder="Telefone" required autofocus>
+    <label for="floatingInputPhone" class="ps-3">Telefone</label>
+  </div>
+  <div class="col form-floating">
+    <input type="text" class="form-control" id="floatingInputEmail" placeholder="E-mail" required autofocus>
+    <label for="floatingInputEmail" class="ps-3">E-mail</label>
+  </div>
+</div>
+
+<div class="row d-flex mt-5">
+  <div class="col-4">
+  </div>
+  <div class="col-4 d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+  </div>
+  <div class="col-4">
+  </div>
+</div>
+
+</form>
+   
+     
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
