@@ -1,8 +1,7 @@
-<?php
+ <?php
 
 include_once 'includes/connect.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="dark">
 <head>
@@ -31,7 +30,7 @@ include_once 'includes/connect.php';
             <a class="nav-link" href="Produto.html">Produtos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Clientes.html">Clientes</a>
+            <a class="nav-link" href="ListarClientes.php">Clientes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="Vendedores.html">Vendedores</a>

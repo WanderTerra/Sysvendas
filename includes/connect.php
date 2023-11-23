@@ -1,25 +1,17 @@
 <?php
 
-$hostname = "localhost";
-$username = "root";
-$password = "";
-$db = "sysvendas";
+echo "OI";
 
-$conn = mysqli_connect($hostname, $username, $password, $db);
+// $hostname = "localhost";
+// $username = "root";
+// $password = "";
+// $db = "sysvendas";
 
-if(!$conn){
-    die("Falha na conexão: " . mysqli_connect_error());
-}
+// $conn = mysqli_connect($hostname, $username, $password, $db);
 
-<<<<<<< HEAD
-
-
-?>
-=======
-else{
-    echo "Conexão realizada com sucesso!";
-}
-
-?>
-```
->>>>>>> b15c9b05e2c471ed283ffffcc835da62849ca34f
+// if(!$conn){
+//     die("Falha na conexão: ".mysqli_connect_error());
+// }
+// else{
+//     echo "Conexão realizada com sucesso";
+// }
