@@ -7,3 +7,14 @@ html, body{
     padding: 1rem;
 }
 
+.imagem{
+    width: 40px;
+    border-radius: 10px; 
+}
+
+.botoes{
+    
+    background-color: transparent;
+    border: none;
+}
+

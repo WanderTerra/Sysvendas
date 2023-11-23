@@ -1,3 +1,60 @@
+<?php
+
+include_once 'includes/connect.php';
+
+
+    if (isset($_POST['cadastrar'])) {
+        $rg = $_POST['rg'];
+        $cpf = $_POST['cpf'];
+        $nome = $_POST['nome'];
+        $logradouro = $_POST['logradouro'];
+        $numero = $_POST['numero'];
+        $bairro = $_POST['bairro'];
+        $cep = $_POST['cep'];
+        $cidade = $_POST['cidade'];
+        $estado = $_POST['estado'];
+        $telefone = $_POST['telefone'];
+        $email = $_POST['email'];
+        $senha = max(6, $_POST['senha']);
+        $arquivo = $_FILES['foto'];
+        $tipo = $_POST['tipo'];
+
+        var_dump($arquivo);
+
+        if($arquivo['error']) die("Falha no upload do arquivo!");
+        //definindo a pasta onde salvar os arquivos
+        $pasta = "./uploads/";
+        $nome_arquivo = $arquivo['name'];
+        //renomeando o arquivo
+        $new_name = uniqid();
+        //pegando a extensão do arquivo
+        $extensao = strtolower(pathinfo($nome_arquivo, PATHINFO_EXTENSION));
+        //validando a extensão do arquivo
+        if($extensao != "jpg" && $extensao != "png"){
+          echo "<script>alert('Extensão inválida!')</script>";
+
+        }
+
+        $path = $pasta . $new_name. "." .$extensao;
+        //movendo o arquivo para a pasta
+        $foto = move_uploaded_file($arquivo['tmp_name'], $path);
+
+        $sql = "INSERT INTO pessoa (rg, cpf, nome, logradouro, numero, bairro, cep, cidade, estado, telefone, email, foto, tipo) VALUES ('$rg', '$cpf', '$nome', '$logradouro', '$numero', '$bairro', '$cep', '$cidade', '$estado', '$telefone', '$email', '$path', '$tipo')";
+
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            echo "<script>alert('Cadastro realizado com sucesso!')</script>";
+            echo "<script>window.location.href = 'Cadastro_de_Pessoas.php'</script>";
+        } else {
+            echo "<script>alert('Erro ao realizar o cadastro!')</script>";
+            echo "<script>window.location.href = 'index.php'</script>";
+        }
+
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="dark">
 
@@ -28,7 +85,7 @@
             <a class="nav-link" href="#">Produtos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="ListarClientes.php">Clientes</a>
+            <a class="nav-link" href="#">Clientes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Vendedores</a>
@@ -42,7 +99,7 @@
               Cadastro
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="Cadastro_de_Clientes.html">Clientes</a></li>
+              <li><a class="dropdown-item" href="ListarClientes.php">Clientes</a></li>
               <li><a class="dropdown-item" href="Cadastro_de_Produtos.html">Produtos</a></li>
               <li><a class="dropdown-item" href="Cadastro_de_Vendedores.html">Vendedores</a></li>
               <li><a class="dropdown-item" href="Venda.html">Vendas</a></li>
@@ -82,74 +139,86 @@
 
       <div class="row mb-3">
         <div class="col-sm-10 form-floating">
-          <input type="text" class="form-control" name="logradouro" id="floatingInputStreet" placeholder="Logradouro" required autofocus>
+          <input type="text" class="form-control" name="logradouro" id="floatingInputStreet" placeholder="Logradouro"
+            required autofocus>
           <label for="floatingInputStreet" class="ps-3">Logradouro</label>
         </div>
         <div class="col-sm-2 form-floating">
-          <input type="text" class="form-control" name="numero" id="floatingInputNumber" placeholder="Numero" required autofocus>
+          <input type="text" class="form-control" name="numero" id="floatingInputNumber" placeholder="Numero" required
+            autofocus>
           <label for="floatingInputNumber" class="ps-3">Numero</label>
         </div>
       </div>
 
       <div class="row mb-3">
         <div class="col-sm-8 form-floating">
-          <input type="text" class="form-control" name="bairro" id="floatingInputNeighborhood" placeholder="Bairro" required
-            autofocus>
+          <input type="text" class="form-control" name="bairro" id="floatingInputNeighborhood" placeholder="Bairro"
+            required autofocus>
           <label for="floatingInputNeighborhood" class="ps-3">Bairro</label>
         </div>
         <div class="col-sm-4 form-floating">
-          <input type="text" class="form-control" name="cep" id="floatingInputPostalCode" placeholder="CEP" required autofocus>
+          <input type="text" class="form-control" name="cep" id="floatingInputPostalCode" placeholder="CEP" required
+            autofocus>
           <label for="floatingInputPostalCode" class="ps-3">CEP</label>
         </div>
       </div>
 
       <div class="row mb-3">
         <div class="col-sm-10 form-floating">
-          <input type="text" class="form-control" name="cidade" id="floatingInputCity" placeholder="Cidade" required autofocus>
+          <input type="text" class="form-control" name="cidade" id="floatingInputCity" placeholder="Cidade" required
+            autofocus>
           <label for="floatingInputCity" class="ps-3">Cidade</label>
         </div>
         <div class="col-sm-2 form-floating">
-          <input type="text" class="form-control" name="estado"  id="floatingInputState" placeholder="Estado" required autofocus>
+          <input type="text" class="form-control" name="estado" id="floatingInputState" placeholder="Estado" required
+            autofocus>
           <label for="floatingInputState" class="ps-3">Estado</label>
         </div>
       </div>
       <div class="row mb-3">
-        <div class="col form-floating">
-          <input type="text" class="form-control" name="telefone" id="floatingInputPhone" placeholder="Telefone" required autofocus>
+        <div class="col-sm-3 form-floating">
+          <input type="text" class="form-control" name="telefone" id="floatingInputPhone" placeholder="Telefone"
+            required autofocus>
           <label for="floatingInputPhone" class="ps-3">Telefone</label>
         </div>
-        <div class="col form-floating">
-          <input type="text" class="form-control" name="email"  id="floatingInputEmail" placeholder="E-mail" required autofocus>
+        <div class="col-sm-6 form-floating">
+          <input type="text" class="form-control" name="email" id="floatingInputEmail" placeholder="E-mail" required
+            autofocus>
           <label for="floatingInputEmail" class="ps-3">E-mail</label>
         </div>
+        <div class="col-sm-3 form-floating">
+          <input type="text" class="form-control" name="senha" id="floatingInputSenha" placeholder="Senha"
+            required autofocus>
+          <label for="floatingInputSenha" class="ps-3">Senha</label>
+        </div>
+        
       </div>
-
 
       <div class="row mb-3">
         <div class="col form-floating">
-          <input type="file" class="form-control" name="foto" id="floatingInputFoto"  required autofocus>
+          <input type="file" class="form-control" name="foto" id="floatingInputFoto" required autofocus>
           <label for="floatingInputPhone" class="ps-3">Foto</label>
         </div>
         <div class="col form-floating">
-          <select class="form-select" aria-label="Default select example">
+          <select class="form-select" name="tipo" aria-label="Default select example">
             <option selected>Selecione o tipo</option>
             <option value="adm">Administrador</option>
             <option value="ven">Vendedor</option>
             <option value="cli">Cliente</option>
+          </select>
         </div>
-      </div>
 
-      <div class="row d-flex mt-5">
-        <div class="col-4">
+        <div class="row d-flex mt-5">
+          <div class="col-4">
+          </div>
+          <div class="col-4 d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary" name="cadastrar">Cadastrar</button>
+          </div>
+          <div class="col-4">
+          </div>
         </div>
-        <div class="col-4 d-flex justify-content-center">
-          <button type="submit" class="btn btn-primary">Cadastrar</button>
-        </div>
-        <div class="col-4">
-        </div>
-      </div>
-    </form>
 
+        </form>
 
 
 
