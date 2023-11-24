@@ -66,7 +66,7 @@ include_once 'includes/connect.php';
 
         if ($result) {
             echo "<script>alert('Cadastro atualizado com sucesso!')</script>";
-            echo "<script>window.location.href = 'ListarVendedores.php'</script>";
+            echo "<script>window.location.href = 'Clientes.php'</script>";
         } else {
             echo "<script>alert('Erro ao realizar a atualização!')</script>";
             echo "<script>window.location.href = 'index.php'</script>";
@@ -98,7 +98,7 @@ include_once 'includes/connect.php';
 
 
   <div class="container mt-5 bg-body-tertiary p-3 text-center">
-    <h3 class="mb-3">Atualizar Vendedor</h3>
+    <h3 class="mb-3">Atualizar Cliente</h3>
 
     <form method="POST"  enctype="multipart/form-data">
 

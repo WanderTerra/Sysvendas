@@ -9,6 +9,7 @@ include_once 'includes/connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
     <title>Sysvendas</title>
     <link rel="icon" href="icon.png">
 
@@ -29,10 +30,12 @@ include_once 'includes/connect.php';
             <thead>
               <tr>
                 <th scope="col">#Id</th>
+                <th scope="col">Foto</th>
                 <th scope="col">nome</th>
                 <th scope="col">CPF</th>
                 <th scope="col">E-mail</th>
                 <th scope="col">Senha</th>
+                <th scope="col"></th>
                 <th scope="col"></th>
               </tr>
             </thead>
@@ -50,16 +53,18 @@ include_once 'includes/connect.php';
                     $cpf = $row['cpf'];
                     $email = $row['email'];
                     $senha = $row['senha'];
+                    $foto = $row['foto'];
 
                     echo'
                     <tr>
                     <th scope="row">'.$id.'</th>
+                    <td> <img class="imagem" src=" '.$foto.'" alt="" ></td>
                     <td>'.$nome.'</td>
                     <td>'.$cpf.'</td>
                     <td>'.$email.'</td>
                     <td >'.$senha.'</td>
-                    <td><a href="./editar.php?updateid='.$id.'">editar </a>
-                    <a href="./excluir.php?deleteid='.$id.'"><button><i class="bi bi-trash-fill"></i></button> </a></td>
+                    <td><a href="./AtualizarVendedor.php?updateid='.$id.'" class="btn btn-primary"><i class="bi bi-pencil-fill"></i></a></td>
+                    <td><a href="./excluir.php?deleteid='.$id.'" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a></td>
                   </tr>
                     ';
                   }

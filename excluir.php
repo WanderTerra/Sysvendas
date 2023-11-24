@@ -8,11 +8,11 @@ if(isset($_GET['deleteid'])){
     $sql = "DELETE FROM pessoa WHERE id=$id";
     $result = mysqli_query($conn, $sql);
     if($result){
-        header('location: ListarClientes.php');
+        header('location: Clientes.php');
     }
     else{
         echo "<script>alert('Erro ao excluir!')</script>";
-        echo "<script>window.location.href = 'ListarClientes.php'</script>";
+        echo "<script>window.location.href = 'Clientes.php'</script>";
     }
 }
 ?>
