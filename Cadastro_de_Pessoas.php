@@ -1,5 +1,8 @@
-<?php
 
+
+
+<?php
+  
 include_once 'includes/connect.php';
 
 
@@ -99,7 +102,7 @@ include_once 'includes/connect.php';
               Cadastro
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="ListarClientes.php">Clientes</a></li>
+              <li><a class="dropdown-item" href="Clientes.php">Clientes</a></li>
               <li><a class="dropdown-item" href="Cadastro_de_Produtos.html">Produtos</a></li>
               <li><a class="dropdown-item" href="Cadastro_de_Vendedores.html">Vendedores</a></li>
               <li><a class="dropdown-item" href="Venda.html">Vendas</a></li>
