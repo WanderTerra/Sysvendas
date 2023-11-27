@@ -1,9 +1,6 @@
-
-
-
 <?php
   
-include_once 'includes/connect.php';
+include_once './includes/connect.php';
 
 
     if (isset($_POST['cadastrar'])) {

@@ -63,8 +63,8 @@ include_once 'includes/connect.php';
                     <td>'.$cpf.'</td>
                     <td>'.$email.'</td>
                     <td >'.$senha.'</td>
-                    <td><a href="./AtualizarVendedor.php?updateid='.$id.'" class="btn btn-primary"><i class="bi bi-pencil-fill"></i></a></td>
-                    <td><a href="./excluir.php?deleteid='.$id.'" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a></td>
+                    <td><a href="./AtualizarVendedor.php?updateid='.$id.'"><i class="bi bi-pencil-square"></i></a></td>
+                    <td><a href="./excluir.php?deleteid='.$id.'" class="text-danger"><i class="bi bi-trash"></i></a></td>
                   </tr>
                     ';
                   }
