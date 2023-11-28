@@ -1,6 +1,6 @@
 <?php
 
-include_once 'includes/connect.php';
+// include_once 'includes/connect.php';
 
 
     $id = $_GET["updateid"];
