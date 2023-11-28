@@ -1,3 +1,7 @@
+<?php
+include_once 'includes/connect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="dark">
 <head>
@@ -45,6 +49,11 @@
                 </select>
                 <label for="floatingInputProduct" class="ps-3">Produto</label>
               </div>
+              <div class="col form-floating">
+                <select type="text" class="form-control" id="floatingInputCustomer" placeholder="Cliente" required autofocus>
+                <option value="">Busque um cliente</option>
+                </select>
+                <label for="floatingInputCustomer" class="ps-3">Cliente</label>
             </div>
 
             <div class="row mb-3">

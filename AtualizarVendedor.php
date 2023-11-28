@@ -196,7 +196,7 @@ include_once 'includes/connect.php';
           <div class="col-4">
           </div>
           <div class="col-4 d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary" name="atualizar">Atualizar</button>
+            <b  utton type="submit" class="btn btn-primary" name="atualizar">Atualizar</button>
           </div>
           <div class="col-4">
           </div>
