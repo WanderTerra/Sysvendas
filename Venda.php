@@ -1,3 +1,7 @@
+<?php
+include_once 'includes/connect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="dark">
 <head>
@@ -9,45 +13,10 @@
 
 </head>
 
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="logo1.png" alt="" width="130" height="37"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Produtos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Clientes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Vendedores</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Vendas</a>
-          </li>
-          <li class="nav-item dropdown me-5">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Cadastro
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="Cadastro_de_Clientes.html">Clientes</a></li>
-              <li><a class="dropdown-item" href="Cadastro_de_Produtos.html">Produtos</a></li>
-              <li><a class="dropdown-item" href="Cadastro_de_Vendedores.html">Vendedores</a></li>
-              <li><a class="dropdown-item" href="Venda.html">Vendas</a></li>
-            </ul>
-        </form>
-      </div>
-    </div>
-  </nav>
-</header>
+<div id="menu">
+  <?php include 'includes/header.html'; ?>
+</div>
+
 <body>
 
 
@@ -80,6 +49,11 @@
                 </select>
                 <label for="floatingInputProduct" class="ps-3">Produto</label>
               </div>
+              <div class="col form-floating">
+                <select type="text" class="form-control" id="floatingInputCustomer" placeholder="Cliente" required autofocus>
+                <option value="">Busque um cliente</option>
+                </select>
+                <label for="floatingInputCustomer" class="ps-3">Cliente</label>
             </div>
 
             <div class="row mb-3">

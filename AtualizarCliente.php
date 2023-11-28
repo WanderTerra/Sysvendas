@@ -1,6 +1,6 @@
 <?php
 
-// include_once 'includes/connect.php';
+include_once 'includes/connect.php';
 
 
     $id = $_GET["updateid"];
@@ -66,7 +66,7 @@
 
         if ($result) {
             echo "<script>alert('Cadastro atualizado com sucesso!')</script>";
-            echo "<script>window.location.href = 'ListarVendedores.php'</script>";
+            echo "<script>window.location.href = 'Clientes.php'</script>";
         } else {
             echo "<script>alert('Erro ao realizar a atualização!')</script>";
             echo "<script>window.location.href = 'index.php'</script>";
@@ -98,7 +98,7 @@
 
 
   <div class="container mt-5 bg-body-tertiary p-3 text-center">
-    <h3 class="mb-3">Atualizar Vendedor</h3>
+    <h3 class="mb-3">Atualizar Cliente</h3>
 
     <form method="POST"  enctype="multipart/form-data">
 
@@ -196,7 +196,7 @@
           <div class="col-4">
           </div>
           <div class="col-4 d-flex justify-content-center">
-            <b  utton type="submit" class="btn btn-primary" name="atualizar">Atualizar</button>
+            <button type="submit" class="btn btn-primary" name="atualizar">Atualizar</button>
           </div>
           <div class="col-4">
           </div>
