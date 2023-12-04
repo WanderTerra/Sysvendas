@@ -1,3 +1,36 @@
+<?php
+include_once 'includes/connect.php';
+
+if(isset($_POST['email']) || isset($_POST['senha'])){
+  if(strlen($_POST['email']) == 0){
+    echo "<script>alert('Preencha o campo email!')</script>";
+  } else if(strlen($_POST['senha']) == 0){
+    echo "<script>alert(Preencha a senha!')</script";
+  }else{
+    $email = $mysqli->real_escape_string($_POST['email']);
+    $senha = $mysqli->real_escape_string($_POST['senha']);
+    }
+    $sql_code = "SELECT * FROM pessoa WHERE email = '$email' AND senha = '$senha'";
+    $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+
+    $quantidade = $sql_query->num_rows;
+
+    if($quantidade == 1){
+      $sql_fetch = $sql_query->fetch_assoc(); 
+      
+      if(!isset($_SESSION)){
+        session_start();
+      } 
+      $_SESSION['id'] = $sql_fetch['id'];
+      $_SESSION['nome'] = $sql_fetch['nome'];
+
+  } else{
+    echo "<script>alert('Usuário ou senha incorretos!')</script>";
+  }
+
+    
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="dark">
 <head>
@@ -35,4 +68,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
+
+
 </html>

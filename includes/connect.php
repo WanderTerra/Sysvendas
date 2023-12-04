@@ -11,11 +11,9 @@ if(!$conn){
 }
 else{
 
-    echo "Conexão realizada com sucesso";
-}
-?>
-
     // echo "Conexão realizada com sucesso";
 }
 ?>
+
+
 
